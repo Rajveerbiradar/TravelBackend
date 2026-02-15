@@ -15,6 +15,9 @@ connectDB();
 
 app.use(express.urlencoded({extended: true}));
 
+app.use(express.json());
+
+
 app.use('/hello', (req, res)=>{
     res.send("hello world")
 })
@@ -29,10 +32,6 @@ app.use(errorHandler)
 
 const PORT = config.port;
 
-app.listen(PORT, ()=>{
+app.listen(PORT, '0.0.0.0', ()=>{
     console.log("server is started on the port :", PORT);
 })
-
-
-
-//user name : pranneet; email : parneet@mail.com; passwrod: R@jveer4169
